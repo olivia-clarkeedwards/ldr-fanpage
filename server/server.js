@@ -30,7 +30,7 @@ server.set('views', join(__dirname, 'views'))
  *************************/
 
 server.get('/', (req, res) => {
-  res.send('Welcome to LDR fan base')
+  res.render('home')
 })
 
 server.use('/user', userRoutes)
