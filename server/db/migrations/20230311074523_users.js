@@ -9,9 +9,9 @@ exports.up = function (knex) {
     table.string('firstname')
     table.string('lastname')
     table.date('dateofbirth')
-    table.int('theme_id')
-    table.int('album_id')
-    table.int('song_id')
+    table.integer('theme_id')
+    table.integer('album_id')
+    table.integer('song_id')
   })
 }
 
