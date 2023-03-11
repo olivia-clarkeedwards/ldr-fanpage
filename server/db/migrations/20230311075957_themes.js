@@ -4,7 +4,7 @@ exports.up = function (knex) {
     table.string('theme_name')
     table.string('primary_colour')
     table.string('secondary_colour')
-    table.string('text_color')
+    table.string('text_colour')
     table.string('font')
   })
 }
