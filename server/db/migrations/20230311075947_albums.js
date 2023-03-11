@@ -4,7 +4,7 @@ exports.up = function (knex) {
     table.string('album_title')
     table.integer('release_year')
     table.string('producer')
-    table.array('song_ids')
+    table.text('tracklist')
   })
 }
 
