@@ -80,8 +80,11 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
+    "@types/knex": "^0.16.1",
     "express": "^4.17.2",
     "knex": "^2.3.0",
+    "knex-types": "^0.5.0",
+    "path": "^0.12.7",
     "react-dom": "^18.2.0",
     "sqlite3": "^5.1.2"
   },
