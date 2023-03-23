@@ -1,4 +1,4 @@
-function ShowUsers() {
+function Users() {
   return (
     <ul>
       <li>User 1</li>
@@ -8,4 +8,4 @@ function ShowUsers() {
   )
 }
 
-export default ShowUsers
+export default Users

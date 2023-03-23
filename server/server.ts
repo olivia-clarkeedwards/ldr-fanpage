@@ -25,4 +25,12 @@ server.use('/user', userRoutes)
 server.use('/songs', songRoutes)
 server.use('/albums', albumRoutes)
 
+/*
+ * re-route to client-side
+ *************************/
+
+server.get('*', (request, response) => {
+  response.sendFile(join(__dirname, '/public/index.html'))
+})
+
 export default server
