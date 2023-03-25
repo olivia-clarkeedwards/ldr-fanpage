@@ -69,9 +69,7 @@ exports.seed = (knex) => {
       (Now, now you do)
       (Now you do)
       (Now you do)`,
-      album_id: 2,
       released_as_single: true,
-      producer: 'Robopop',
     },
     {
       id: 2,
@@ -109,9 +107,7 @@ exports.seed = (knex) => {
       And all of my peaches (are ruined, bitch)
       Are ruined (bitch)
       Are ruined (fuck)`,
-      album_id: 5,
       released_as_single: false,
-      producer: '',
     },
     {
       id: 3,
@@ -147,9 +143,7 @@ exports.seed = (knex) => {
       I guess that no one ever really made me feel that much higher
       Te deseo, cariño, boy, it's you I desire
       Your love, your love`,
-      album_id: 3,
       released_as_single: true,
-      producer: 'Dan Auerbach',
     },
   ])
 }
