@@ -1,7 +1,6 @@
 import config from './knexfile'
 import knex from 'knex'
 import { User, UserDetails } from '../../common/User'
-import { Album } from '../../common/Album'
 
 type Environment = 'production' | 'test' | 'development'
 const environment = (process.env.NODE_ENV as Environment) || 'development'
@@ -32,21 +31,3 @@ export function addUser(user: UserDetails, db = connection): Promise<User> {
 // ): Promise<User> {
 //   return db('users').update(newDetails).where('id', id)
 // }
-
-/*
- * albums
- *************************/
-
-export function getAlbums(db = connection): Promise<Album[]> {
-  return db('albums').select()
-}
-
-export function getAlbum(id: number, db = connection): Promise<Album> {
-  return db('albums').select().where('id', id).first()
-}
-
-// add theme
-
-// get themes
-
-// edit theme

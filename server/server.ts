@@ -21,9 +21,9 @@ server.use(express.static(join(__dirname, 'public')))
  * define the routes
  *************************/
 
-server.use('/user', userRoutes)
-server.use('/songs', songRoutes)
-server.use('/albums', albumRoutes)
+server.use('/api/v1/users', userRoutes)
+server.use('/api/v1/songs', songRoutes)
+server.use('/api/v1/albums', albumRoutes)
 
 /*
  * re-route to client-side
