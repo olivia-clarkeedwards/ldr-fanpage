@@ -1,4 +1,4 @@
-const { join } = require('node:path')
+const { join } = require('path')
 
 module.exports = {
   entry: join(__dirname, 'index.tsx'),
@@ -13,6 +13,10 @@ module.exports = {
         test: /\.(j|t)sx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
     ],
   },

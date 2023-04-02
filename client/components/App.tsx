@@ -9,12 +9,15 @@ import About from './About'
 import Bio from './Bio'
 import Media from './Media'
 import Gallery from './Gallery'
+import './app.css'
 
 function App() {
   return (
     <>
       <div>
-        <h1>Welcome to the LDR fanpage!</h1>
+        <h1 className="text-primary text-4xl font-bold">
+          Welcome to the LDR fanpage!
+        </h1>
       </div>
       <Nav />
       <Routes>
