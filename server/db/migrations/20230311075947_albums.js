@@ -4,6 +4,7 @@ exports.up = function (knex) {
     table.string('album_title')
     table.integer('number_of_tracks')
     table.string('duration_mins')
+    table.string('artwork')
   })
 }
 
