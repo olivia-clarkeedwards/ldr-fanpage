@@ -11,7 +11,7 @@ const connection = knex(config[environment])
  *************************/
 
 export function getSongs(db = connection): Promise<Song[]> {
-  return db('albums').select()
+  return db('albums').select('album.id AS album_id')
 }
 
 export function getSong(id: number, db = connection): Promise<Song> {
