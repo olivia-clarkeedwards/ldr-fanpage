@@ -14,7 +14,7 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "format": "prettier -w '**/*.{js,jsx,ts,tsx}'",
     "webpack": "webpack --config ./client/webpack.config.js", 
-    "build": "run-p build:client build:server",
+    "build": "run-p build:client",
     "build:client": "npm run webpack -- --mode production",
     "build:server": "npm run knex -- migrate:latest"
   },
