@@ -1,5 +1,5 @@
 import express from 'express'
-import { getUsers } from '../db/db'
+import { getUsers } from '../db/user-db'
 
 const router = express.Router()
 
