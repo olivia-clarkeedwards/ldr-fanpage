@@ -11,19 +11,33 @@ const connection = knex(config[environment])
  *************************/
 
 export function getAlbums(db = connection): Promise<AlbumWithSongId[]> {
+  // return db('albums')
+  //   .select()
+  //   .select(
+  //     'albums.id AS album_id',
+  //     'album_title',
+  //     'number_of_tracks AS numberOfTracks',
+  //     'duration_mins AS duration',
+  //     'artwork',
+  //     'song_album.id AS song_id',
+  //     'songs.song_title',
+  //     'songs.released_as_single',
+  //     'lyrics'
+  //   )
+  //   .join('song_album', 'albums.id', 'song_album.album_id')
+  //   .join('songs', 'song_album.song_id', 'songs.id')
   return db('albums')
+    .leftOuterJoin('song_album', 'albums.id', 'song_album.album_id')
+    .leftOuterJoin('songs', 'song_album.song_id', 'songs.id')
     .select(
-      'albums.id AS album_id',
-      'album_title',
-      'number_of_tracks AS numberOfTracks',
-      'duration_mins AS duration',
-      'artwork',
-      'song_album.id AS song_id',
-      'songs.song_title',
-      'songs.released_as_single'
+      '*',
+      'albums.id AS id',
+      'song_title',
+      'lyrics',
+      'released_as_single',
+      'release_date'
     )
-    .join('song_album', 'albums.id', 'song_album.album_id')
-    .join('songs', 'song_album.song_id', 'songs.id')
+    .orderBy('id', 'asc')
 }
 
 export function getAlbum(id: number, db = connection): Promise<Album> {
