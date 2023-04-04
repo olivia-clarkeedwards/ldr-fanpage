@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { fetchAlbums } from '../api/albumsApi'
 import { receiveAlbums } from '../actions/albums'
-import AlbumDetails from './AlbumTile'
+import AlbumTile from './AlbumTile'
 
 function Discography() {
   const dispatch = useAppDispatch()
@@ -19,7 +20,9 @@ function Discography() {
   return (
     <ul className="flex flex-wrap justify-center">
       {albums.map((album) => (
-        <AlbumDetails key={album.id} album={album} />
+        <Link to="/albums/2" key={album.id}>
+          <AlbumTile album={album} />
+        </Link>
       ))}
     </ul>
   )
