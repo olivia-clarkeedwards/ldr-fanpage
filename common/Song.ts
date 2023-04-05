@@ -1,8 +1,11 @@
-export interface Song {
+export interface SongOnAlbum {
   id: number
   song_title: string
   lyrics: string
-  album_id: number
   released_as_single: boolean
   producer: string
+}
+
+export interface Song extends SongOnAlbum {
+  album_id: number
 }

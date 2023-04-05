@@ -1,3 +1,5 @@
+import { Song, SongOnAlbum } from './Song'
+
 export interface Album {
   id?: number
   album_title: string
@@ -10,3 +12,9 @@ export interface AlbumWithSongId extends Album {
   album_id: number
   song_id: number
 }
+
+export type AlbumWithSongs = {
+  id: number
+  name: string
+  songs: SongOnAlbum[]
+}[]
