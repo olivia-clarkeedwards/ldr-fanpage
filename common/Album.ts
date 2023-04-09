@@ -1,4 +1,4 @@
-import { Song, SongOnAlbum } from './Song'
+import { Song } from './Song'
 
 export interface Album {
   id?: number
@@ -13,8 +13,6 @@ export interface AlbumWithSongId extends Album {
   song_id: number
 }
 
-export type AlbumWithSongs = {
-  id: number
-  name: string
-  songs: SongOnAlbum[]
-}[]
+export interface AlbumWithSongs extends Album {
+  songs: Array<Song>
+}

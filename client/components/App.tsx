@@ -3,7 +3,6 @@ import './app.css'
 import { Route, Routes } from 'react-router-dom'
 
 import Header from './Header'
-import Nav from './Nav'
 import Home from './Home'
 import Discography from './Discography'
 import Users from './Users'

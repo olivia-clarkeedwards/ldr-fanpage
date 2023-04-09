@@ -15,7 +15,7 @@ function Discography() {
         dispatch(receiveAlbums(albums))
       })
       .catch((err) => console.log(err.message))
-  })
+  }, [])
 
   return (
     <ul className="flex flex-wrap justify-center">
