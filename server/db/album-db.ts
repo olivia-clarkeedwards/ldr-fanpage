@@ -10,7 +10,7 @@ const connection = knex(config[environment])
  * albums
  *************************/
 
-export async function getAlbums(db = connection): Promise<AlbumWithSongs> {
+export async function getAlbums(db = connection): Promise<Album[]> {
   return db('albums').select('*')
 }
 

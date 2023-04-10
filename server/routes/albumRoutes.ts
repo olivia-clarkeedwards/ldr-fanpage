@@ -1,5 +1,5 @@
 import express from 'express'
-import { getAlbumsWithSongs, getAlbum } from '../db/album-db'
+import { getAlbumsWithSongs } from '../db/dbUtils'
 
 const router = express.Router()
 
@@ -11,12 +11,12 @@ router.get('/', (req, res) => {
     .catch((err) => console.log(err.message))
 })
 
-router.get('/:id', (req, res) => {
-  getAlbum(Number(req.params.id))
-    .then((album) => {
-      res.json(album)
-    })
-    .catch((err) => console.log(err.message))
-})
+// router.get('/:id', (req, res) => {
+//   getAlbum(Number(req.params.id))
+//     .then((album) => {
+//       res.json(album)
+//     })
+//     .catch((err) => console.log(err.message))
+// })
 
 export default router
