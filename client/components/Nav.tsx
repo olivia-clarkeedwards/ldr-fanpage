@@ -36,7 +36,7 @@ function Nav() {
       <button
         className={`NAV-BURGER-OPEN ${
           navBurger ? 'hidden' : ''
-        } flex flex-col lg:flex`}
+        } flex flex-col lg:hidden `}
         onClick={toggleBurger}
       >
         <svg
@@ -51,14 +51,31 @@ function Nav() {
             d="M6 18L18 6M6 6l12 12"
           />
         </svg>
-
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/biography">Lana&apos;s Life</NavLink>
-        <NavLink to="/albums">Discography</NavLink>
-        <NavLink to="/songs">Songs</NavLink>
-        <NavLink to="/gallery">Gallery</NavLink>
-        <NavLink to="/media/news">Media</NavLink>
       </button>
+      <div
+        className={`NAV-BURGER-OPEN ${
+          navBurger ? 'hidden' : ''
+        } flex flex-col lg:flex lg:flex-row lg:p-10`}
+      >
+        <NavLink to="/about" className="lg:p-10">
+          About
+        </NavLink>
+        <NavLink to="/biography" className="lg:p-10">
+          Lana&apos;s Life
+        </NavLink>
+        <NavLink to="/albums" className="lg:p-10">
+          Discography
+        </NavLink>
+        <NavLink to="/songs" className="lg:p-10">
+          Songs
+        </NavLink>
+        <NavLink to="/gallery" className="lg:p-10">
+          Gallery
+        </NavLink>
+        <NavLink to="/media/news" className="lg:p-10">
+          Media
+        </NavLink>
+      </div>
     </nav>
   )
 }
