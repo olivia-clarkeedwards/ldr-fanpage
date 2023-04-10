@@ -14,7 +14,7 @@ function Discography() {
   }, [])
 
   return (
-    <ul className="flex flex-wrap justify-center">
+    <ul className="flex flex-wrap justify-center bg-red-900 ">
       {albums.map((album) => (
         <Link to={`/albums/${album.id}`} key={album.id}>
           <AlbumTile album={album} />
