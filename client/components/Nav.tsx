@@ -9,23 +9,49 @@ function Nav() {
   }
 
   return (
-    <nav className="container flex justify-between px-4 py-8 mx-auto">
+    <nav className="container flex justify-center px-10 py-8">
       <div>
         <button
-          className={`flex lg:hidden ${navBurger ? '' : 'hidden'}`}
+          className={`NAV-BURGER-CLOSED flex lg:hidden ${
+            navBurger ? '' : 'hidden'
+          }`}
           onClick={toggleBurger}
         >
           <div className="space-y-2">
-            <span className="block w-8 h-0.5 bg-stone-100 animate-pulse"></span>
-            <span className="block w-8 h-0.5 bg-stone-100 animate-pulse"></span>
-            <span className="block w-8 h-0.5 bg-stone-100 animate-pulse"></span>
+            <svg
+              className="h-10 w-10 text-stone-100 animate-pulse"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="7 11 12 6 17 11" />
+              <polyline points="7 17 12 12 17 17" />
+            </svg>
           </div>
         </button>
       </div>
       <button
-        className={`${navBurger ? 'hidden' : ''} flex flex-col lg:flex`}
+        className={`NAV-BURGER-OPEN ${
+          navBurger ? 'hidden' : ''
+        } flex flex-col lg:flex`}
         onClick={toggleBurger}
       >
+        <svg
+          className="h-10 w-10 text-stone-100"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+
         <NavLink to="/about">About</NavLink>
         <NavLink to="/biography">Lana&apos;s Life</NavLink>
         <NavLink to="/albums">Discography</NavLink>
