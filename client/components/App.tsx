@@ -2,7 +2,7 @@ import './app.css'
 
 import { Route, Routes } from 'react-router-dom'
 
-import Header from './Header'
+import LandingPage from './LandingPage'
 import Nav from './Nav'
 import Home from './Home'
 import Discography from './Discography'
@@ -18,7 +18,7 @@ import SingleAlbum from './SingleAlbum'
 function App() {
   return (
     <div>
-      <Header />
+      <LandingPage />
       <Routes>
         <Route index element={<Home />}></Route>
         <Route path="about" element={<About />}></Route>
