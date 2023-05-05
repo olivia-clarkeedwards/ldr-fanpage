@@ -6,7 +6,8 @@ const router = express.Router()
 router.get('/', (req, res) => {
   getUsers()
     .then((users) => {
-      res.json(users)
+      if (users.length !== 0) res.json(users)
+      else throw Error('No users found.')
     })
     .catch((err) => {
       res.status(500).send(err.message)

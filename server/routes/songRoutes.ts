@@ -7,9 +7,10 @@ const router = express.Router()
 router.get('/:albumId', (req, res) => {
   getSongsByAlbumId(Number(req.params.albumId))
     .then((songs) => {
-      res.json(songs)
+      if (songs.length !== 0) res.json(songs)
+      else throw Error('Invalid song ID.')
     })
-    .catch((err) => console.log(err.message))
+    .catch((err) => res.status(400).send(err.message))
 })
 
 export default router
