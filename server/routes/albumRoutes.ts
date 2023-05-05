@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     .then((albums) => {
       res.json(albums)
     })
-    .catch((err) => console.log(err.message))
+    .catch((err) => err)
 })
 
 // router.get('/:id', (req, res) => {
