@@ -6,17 +6,10 @@ const router = express.Router()
 router.get('/', (req, res) => {
   getAlbumsWithSongs()
     .then((albums) => {
-      res.json(albums)
+      if (albums.length !== 0) res.json(albums)
+      else throw Error('No albums found.')
     })
-    .catch((err) => err)
+    .catch((err) => res.status(500).send(err.message))
 })
-
-// router.get('/:id', (req, res) => {
-//   getAlbum(Number(req.params.id))
-//     .then((album) => {
-//       res.json(album)
-//     })
-//     .catch((err) => console.log(err.message))
-// })
 
 export default router

@@ -1,23 +1,24 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import { thunkGetAlbums } from '../actions/albums'
-import { useAppDispatch, useAppSelector } from '../hooks/redux'
+import { useAppSelector } from '../hooks/redux'
 import Songs from './Songs'
+import { AlbumWithSongs } from '../../common/Album'
 
 function SingleAlbum() {
   const { id } = useParams()
-  const albums = useAppSelector((state) => state.album)
-  const dispatch = useAppDispatch()
+  const albums = useAppSelector((state) => state.albums)
+  const [currentAlbum, setCurrentAlbum] = useState({} as AlbumWithSongs)
 
-  // useEffect(() => {
-  //   dispatch(thunkGetAlbums())
-  // })
+  useEffect(() => {
+    const album = albums.find((album) => album.id === id)
+    album && setCurrentAlbum(album)
+  })
 
   return (
     <div className="grid h-screen place-items-center">
       <div className="flex max-w-sm flex-col m-10">
         <img
-          // src={`/images/${album?.artwork}`}
+          src={`/images/${currentAlbum?.artwork}`}
           alt="Born To Die album cover artwork"
         ></img>
         <h3 className="text-3xl font-bold dark:text-white">Born To Die</h3>
