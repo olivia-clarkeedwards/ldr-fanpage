@@ -24,7 +24,9 @@ function App() {
         <Route path="about" element={<About />}></Route>
         <Route path="biography" element={<Bio />}></Route>
         <Route path="albums" element={<Discography />}></Route>
-        <Route path="albums/:id" element={<SingleAlbum />}></Route>
+        <Route path="albums">
+          <Route path=":id" element={<SingleAlbum />}></Route>
+        </Route>
         <Route path="users" element={<Users />}></Route>
         <Route path="users/signup" element={<AddUser />}></Route>
         <Route path="songs" element={<Songs />}></Route>

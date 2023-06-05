@@ -10,16 +10,19 @@ function SingleAlbum() {
   const [currentAlbum, setCurrentAlbum] = useState({} as AlbumWithSongs)
 
   useEffect(() => {
-    const album = albums.find((album) => album.id === id)
-    album && setCurrentAlbum(album)
-  })
+    for (const album of albums) {
+      if (album && album.id === id) {
+        setCurrentAlbum(album)
+      }
+    }
+  }, [])
 
   return (
     <div className="grid h-screen place-items-center">
       <div className="flex max-w-sm flex-col m-10">
         <img
-          src={`/images/${currentAlbum?.artwork}`}
-          alt="Born To Die album cover artwork"
+          src={`/images/${currentAlbum.artwork}`}
+          alt={`${currentAlbum.album_title} album cover artwork`}
         ></img>
         <h3 className="text-3xl font-bold dark:text-white">Born To Die</h3>
         <Songs />
