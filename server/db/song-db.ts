@@ -10,6 +10,10 @@ const connection = knex(config[environment])
  ********* songs *********
  *************************/
 
+export function getSong(id: number, db = connection): Promise<Song> {
+  return db('albums').select().where('id', id).first()
+}
+
 export function getSongsByAlbumId(
   albumId: number,
   db = connection
@@ -24,8 +28,4 @@ export function getSongsByAlbumId(
     .where('albums.id', albumId)
     .join('song_album', 'albums.id', 'song_album.album_id')
     .join('songs', 'song_album.song_id', 'songs.id')
-}
-
-export function getSong(id: number, db = connection): Promise<Song> {
-  return db('albums').select().where('id', id).first()
 }
