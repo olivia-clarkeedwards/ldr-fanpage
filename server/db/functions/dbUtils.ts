@@ -1,4 +1,4 @@
-import { AlbumWithSongs } from '../../common/Album'
+import { AlbumWithSongs } from '../../../common/Album'
 
 import { getAlbums } from './album-db'
 import { getSongsByAlbumId } from './song-db'

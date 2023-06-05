@@ -1,5 +1,5 @@
 import express from 'express'
-import { getAlbumsWithSongs } from '../db/dbUtils'
+import { getAlbumsWithSongs } from '../db/functions/dbUtils'
 
 const router = express.Router()
 

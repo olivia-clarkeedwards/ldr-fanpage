@@ -1,6 +1,6 @@
-import config from './knexfile'
+import config from '../knexfile'
 import knex from 'knex'
-import { Album } from '../../common/Album'
+import { Album } from '../../../common/Album'
 
 type Environment = 'production' | 'test' | 'development'
 const environment = (process.env.NODE_ENV as Environment) || 'development'

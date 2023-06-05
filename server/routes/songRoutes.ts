@@ -1,5 +1,5 @@
 import express from 'express'
-import { getSongsByAlbumId } from '../db/song-db'
+import { getSongsByAlbumId } from '../db/functions/song-db'
 
 const router = express.Router()
 
