@@ -1,4 +1,4 @@
-import Nav from './Nav'
+import Nav from '../general/Nav'
 
 function Header() {
   return (

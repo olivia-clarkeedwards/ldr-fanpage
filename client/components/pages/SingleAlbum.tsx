@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import { useAppSelector } from '../hooks/redux'
+import { useAppSelector } from '../../hooks/redux'
 import Songs from './Songs'
-import { AlbumWithSongs } from '../../common/Album'
+import { AlbumWithSongs } from '../../../common/Album'
 
 function SingleAlbum() {
   const { id } = useParams()

@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from '../hooks/redux'
-import { thunkGetAlbums } from '../actions/albums'
-import AlbumTile from './AlbumTile'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux'
+import { thunkGetAlbums } from '../../actions/albums'
+import AlbumTile from '../AlbumTile'
 
 function Discography() {
   const dispatch = useAppDispatch()
