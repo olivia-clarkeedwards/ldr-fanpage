@@ -4,7 +4,7 @@ import { AlbumWithSongs } from '../../common/Album'
 
 const router = express.Router()
 
-router.get('/', (_, res) => {
+router.get('/', (req, res) => {
   getAlbumsWithSongs()
     .then((albums: AlbumWithSongs[]) => {
       if (albums.length !== 0) res.json(albums)
