@@ -1,14 +1,16 @@
 import express from 'express'
-import { getUsers } from '../db/user-db'
+import { getUsers } from '../db/functions/user-db'
+import { User } from '../../common/User'
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
+router.get('/', (_, res) => {
   getUsers()
-    .then((users) => {
-      res.json(users)
+    .then((users: User[]) => {
+      if (users.length !== 0) res.json(users)
+      else throw Error('No users found.')
     })
-    .catch((err) => {
+    .catch((err: Error) => {
       res.status(500).send(err.message)
     })
 })

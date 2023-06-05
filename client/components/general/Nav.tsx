@@ -60,13 +60,13 @@ function Nav() {
         <NavLink to="/about" className="lg:p-10">
           About
         </NavLink>
-        <NavLink to="/biography" className="lg:p-10">
+        {/* <NavLink to="/biography" className="lg:p-10">
           Lana&apos;s Life
-        </NavLink>
+        </NavLink> */}
         <NavLink to="/albums" className="lg:p-10">
           Discography
         </NavLink>
-        <NavLink to="/songs" className="lg:p-10">
+        {/* <NavLink to="/songs" className="lg:p-10">
           Songs
         </NavLink>
         <NavLink to="/gallery" className="lg:p-10">
@@ -74,7 +74,7 @@ function Nav() {
         </NavLink>
         <NavLink to="/media/news" className="lg:p-10">
           Media
-        </NavLink>
+        </NavLink> */}
       </div>
     </nav>
   )
